@@ -19,5 +19,6 @@ int main() {
     std::cout << ptr[i] << std::endl;
   }
 
+  delete[] ptr;
   return 0;
 }

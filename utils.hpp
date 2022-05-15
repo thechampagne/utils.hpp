@@ -28,7 +28,7 @@
 namespace utils {
 
 /**
- * utils Main exception
+ * utils main exception
  */
 struct utils_exception : public std::exception 
 {
@@ -69,7 +69,8 @@ struct utils_exception : public std::exception
  *   for (int i = 0; i < new_size; i++) {
  *     std::cout << ptr[i] << std::endl;
  *   }
- * 
+ *
+ *	 delete[] ptr;
  *   return 0;
  * }
  * * *
@@ -92,6 +93,8 @@ T* array_resize(T* ptr, size_t osize, size_t nsize)
   }
 
   memcpy(new_ptr, ptr, osize * sizeof(T));
+
+  delete[] ptr;
   
   return new_ptr;
 }
